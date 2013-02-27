@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension id="multilingual_checkbox" status="experimental" xmlns="http://symphony-cms.com/schemas/extension/1.0">
+	<name>Field: Multilingual Check Box</name>
+
+	<description>The multilingual version of Checkbox field.</description>
+
+	<repo type="github">https://github.com/jonmifsud/multilingual_checkbox</repo>
+
+	<types>
+		<type>Field</type>
+		<type>Field Types</type>
+		<type>Multilingual</type>
+	</types>
+
+	<authors>
+		<author>
+			<name github="jonmifsud" symphony="gunglien">Jonathan Mifsud</name>
+			<email>info@jonmifsud.com</email>
+			<website>http://jonmifsud.com</website>
+		</author>
+	</authors>
+
+	<dependencies>
+		<dependency version="1.6">http://github.com/vlad-ghita/frontend_localisation</dependency>
+	</dependencies>
+
+	<releases>
+		<release version="0.1" date="2013-02-27" min="2.3"/>
+	</releases>
+
+</extension>
