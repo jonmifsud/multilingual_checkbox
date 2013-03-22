@@ -174,14 +174,15 @@
 						}
 					}
 
+					$fieldObject = FieldManager::fetch($field["field_id"]);
+					$default_state = $fieldObject->get('default_state');
 					// Add new fields
 					foreach( $context['new_langs'] as $lc ){
 						// If column lang_code dosen't exist in the laguange drop columns
-
 						if( !in_array('value-'.$lc, $columns) ){
 							Symphony::Database()->query(sprintf("
 								ALTER TABLE `%s`
-									ADD COLUMN `value-{$lc}` enum('yes','no') NOT NULL default '".($this->get('default_state') == 'on' ? 'yes' : 'no')."'",
+									ADD COLUMN `value-{$lc}` enum('yes','no') NOT NULL default '".($default_state == 'on' ? 'yes' : 'no')."'",
 								$entries_table));
 						}
 					}
