@@ -22,6 +22,13 @@
 			$this->_name = __('Multilingual Checkbox');
 		}
 
+		public function toggleFieldData(array $data, $newState, $entry_id=null){
+			$author = Administration::instance()->Author;
+			$lang = $author->get('language');
+			$data["value-{$lang}"] = $newState;
+			return $data;
+		}
+
 		public function createTable(){
 			$field_id = $this->get('id');
 
@@ -484,7 +491,7 @@
 						FROM tbl_entries_data_%d
 						WHERE entry_id = e.id
 					) %s',
-					'handle-'.$lc,
+					'value-'.$lc,
 					$this->get('id'),
 					$order
 				);
